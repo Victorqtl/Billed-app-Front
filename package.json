@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "test": "jest --coverage --noStackTrace --silent"
+    "test": "jest --coverage --noStackTrace --silent",
+    "start": "http-server -p 8080 -d"
   },
   "jest": {
     "verbose": false,
@@ -20,6 +21,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "global": "^4.4.0",
+    "http-server": "^14.1.1",
     "jquery": "^3.5.1",
     "path": "^0.12.7"
   },
