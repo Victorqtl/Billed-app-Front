@@ -22,9 +22,14 @@ export default class {
 
   handleClickIconEye = (icon) => {
     const billUrl = icon.getAttribute("data-bill-url")
+    const modal = document.getElementById('modaleFile')
+    const modalBody = modal.querySelector(".modal-body")
     const imgWidth = Math.floor($('#modaleFile').width() * 0.5)
-    $('#modaleFile').find(".modal-body").html(`<div style='text-align: center;' class="bill-proof-container"><img width=${imgWidth} src=${billUrl} alt="Bill" /></div>`)
-    $('#modaleFile').modal('show')
+    modalBody.innerHTML = `<div style='text-align: center;' class="bill-proof-container"><img width=${imgWidth} src=${billUrl} alt="Bill" /></div>`
+    modal.classList.add('show')
+    modal.style.display = 'block'
+    modal.removeAttribute('aria-hidden')
+    modal.setAttribute('aria-modal', 'true')
   }
 
   getBills = () => {
